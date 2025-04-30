@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  car-service:
+    build:
+      context: ./car-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - car-postgres
+
+  car-postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: car_db
+      POSTGRES_USER: car_user
+      POSTGRES_PASSWORD: car_pass
+    ports:
+      - "5433:5432"

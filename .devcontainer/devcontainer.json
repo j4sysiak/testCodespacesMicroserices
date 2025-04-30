@@ -1,0 +1,11 @@
+{
+    "name": "Docker enabled Codespace",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+      "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+    },
+    "forwardPorts": [8080],
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y openjdk-17-jdk maven"
+  }
+  
+  
